@@ -23,16 +23,13 @@ git clone https://github.com/apvarun/digital-garden-hugo-theme.git themes/digita
 
 #### Setup
 
-1. Copy `package.json` and `package-lock.json` files from the theme/digitalgarden folder to the root folder of your the website
-2. Run `npm install` to install required packages for theme
-3. Run `npm i -g postcss-cli` to use PostCSS with Hugo build
-4. Set `theme = 'digitalgarden'` in config.toml
-5. Run `npm run dev` to start your local server
+1. Set `theme = 'digitalgarden'` in config.toml
+2. Run `hugo server` to start your local server
 
 When deploying to services like Netlify or Vercel, use the following command for building your site:
 
 ```sh
-npm i -g postcss-cli && npm run build
+hugo --gc --minify
 ```
 
 → [Understanding the theme structure](/articles/structure)
