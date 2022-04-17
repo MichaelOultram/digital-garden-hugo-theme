@@ -53,3 +53,13 @@ darkModeToggle.addEventListener('click', () => {
 
   }
 })
+
+
+// Search bar
+const searchQuery = document.getElementById("search-query");
+if (searchQuery.readOnly) {
+  // Not on the search page, redirect on click
+  searchQuery.addEventListener('click', () => {
+    window.location = "/search/";
+  });
+}

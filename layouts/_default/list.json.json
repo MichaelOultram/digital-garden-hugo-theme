@@ -1,0 +1,9 @@
+{{- define "response" -}}
+[
+    {{- $renders := slice -}}
+    {{- range $i, $e := .Site.Pages -}}
+        {{- $renders = $renders | append (.Render "item") -}}
+    {{- end -}}
+    {{- delimit $renders ", " -}}
+]
+{{- end -}}

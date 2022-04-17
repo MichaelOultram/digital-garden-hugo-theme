@@ -81,3 +81,8 @@ googleAnalytics = "UA-PROPERTY_ID"
   [markup.goldmark.renderer]
     # Enable to include inline HTML
     unsafe = true
+
+
+# produce "json" output on home for search index
+[outputs]
+  home = ["HTML", "RSS", "json"]

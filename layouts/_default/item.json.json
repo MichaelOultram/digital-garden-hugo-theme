@@ -1,0 +1,1 @@
+{{dict "title" .Title "categories" (default slice .Params.Categories) "technology" (default slice .Params.Technology) "url" .Permalink "content" .Plain | jsonify}}

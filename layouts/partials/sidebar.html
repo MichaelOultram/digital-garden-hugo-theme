@@ -16,6 +16,8 @@
     </button>
   </p>
 
+  {{- partial "search-bar.html" . -}}
+
   {{ $permalink := cond (eq (len .RelPermalink) 1) .RelPermalink (strings.TrimRight "/" .RelPermalink) }}
   <ul class="list-none flex flex-col gap-1">
     {{ range .Site.Menus.main }}
