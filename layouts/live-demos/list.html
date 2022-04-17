@@ -7,6 +7,11 @@
     <a href="{{ .Permalink }}" class="inline-block">
       <h2 class="font-bold text-4xl lg:text-6xl py-1 px-3 mb-4 inline-block">{{ .Title }}</h2>
     </a>
+
+    {{ if not .Data.Pages}}
+    <p class="text-2xl text-center pt-10 text-slate-300 dark:text-slate-700">No items</p>
+    {{ end }}
+
     <div class="space-y-2.5 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4">
       {{ range $index, $page := .Data.Pages -}}
       <a class="block px-3 py-4 row-span-2" href="{{ .RelPermalink }}">

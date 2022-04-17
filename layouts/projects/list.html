@@ -7,6 +7,11 @@
     <a href="{{ .Permalink }}">
       <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">{{ .Title }}</h2>
     </a>
+
+    {{ if not .Data.Pages}}
+    <p class="text-2xl text-center pt-10 text-slate-300 dark:text-slate-700">No items</p>
+    {{ end }}
+
     <div class="space-y-2.5">
       {{ range .Data.Pages -}}
       <a class="block px-3 py-4 hover:bg-slate-200 dark:hover:bg-slate-700" href="{{ .RelPermalink }}">

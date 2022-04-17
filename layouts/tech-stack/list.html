@@ -7,6 +7,10 @@
     <p>{{ .Description }}</p>
   </div>
 
+  {{ if not .Site.Data.stack}}
+  <p class="text-2xl text-center pt-4 text-slate-300 dark:text-slate-700">No items</p>
+  {{ end }}
+
   <div class="px-6 pb-6 w-full lg:w-[580px] max-w-[65ch] mx-auto flex flex-col gap-5 h-fit">
     {{ range $index, $stack := .Site.Data.stack }}
     <a href="{{ .link }}" target="_blank" rel="noopener noreferrer"
