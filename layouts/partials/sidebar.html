@@ -33,11 +33,14 @@
         {{ end }}
       </a>
       {{ if hasPrefix $permalink .URL }}
-      <ul class="list-disc list-outside px-8">
+      <ul class="list-none">
         {{ range $category, $value := site.Taxonomies.categories }}
           {{ if ge (where $value.Pages "Section" $section) 1 }}
             <li>
-              <a class="py-1.5 rounded-md text-xs flex items-center justify-between">{{ $category }}</a>
+              <a class="px-4 py-1.5 rounded-md text-xs flex items-center hover:bg-slate-200 dark:hover:bg-slate-700"
+                 href="{{ path.Join $section "categories" $category | relURL }}">
+                <span class="text-sm">↳</span><span class="px-2">{{ $category }}</span>
+              </a>
             </li>
           {{ end }}
         {{ end }}
@@ -50,7 +53,7 @@
   <div class="flex-1"></div>
 
   {{ if .Site.Params.newsletter }}
-  {{- partial "newsletter-widget.html" . -}} 
+  {{- partial "newsletter-widget.html" . -}}
   {{ end }}
 
   <ul class="list-none flex flex-wrap justify-center gap-1 pt-2 border-t border-slate-200 dark:border-slate-600">
